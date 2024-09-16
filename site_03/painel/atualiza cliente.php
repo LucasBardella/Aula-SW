@@ -1,38 +1,42 @@
 <?php
     include 'conecta.php';
-    
     include 'menu.php';
+
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM clientes WHERE id_cliente = '$id'";
+    $consulta = $conexao->query($sql);
+    $dados = $consulta->fetch_assoc()
 
 
 
 ?>
-
-
-
-            <div id="layoutSidenav_content">
+<html>
+    <body>
+        <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">ATUALIZAR CLIENTE</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">
-                                <a class="btn btn-success" href="insere_cliente.php">INSERE CLIENTE</a>
+                                <a class="btn btn-warning" href="index.php">VOLTAR</a>
                             </li>
                         </ol>
                         <div class="card mb-4">
-                            <form>
+                            <form action="processa_atualiza_cliente.php?id=<?php echo $id; ?>" method="POST" >
                                 <div class="mb-3">
                                     <label for="" class="form-label">Nome</label>
-                                    <input type="email" class="form-control">
+                                    <input name="nome_novo" type="text" class="form-control" value="<?php echo $dados['nome_cliente']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">E-mail</label>
-                                    <input type="password" class="form-control">
+                                    <input name="email_novo" type="email" class="form-control" value="<?php echo $dados['email_cliente']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Telefone</label>
-                                    <input type="password" class="form-control">
+                                    <input name="telefone_novo" type="text" class="form-control" value="<?php echo $dados['telefone']; ?>">
                                 </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Atualizar</button>
                             </form>
                         </div>
                     </div>

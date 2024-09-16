@@ -6,13 +6,19 @@
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
 
+    //echo $email ."<br>";
+    //echo "Senha ==> $senha <br>";
+
     $consulta = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
 
     $resultado = $conexao->query($consulta);
+
+    //var_dump($resultado);
+
     $registros = $resultado->num_rows;
     $resultado_usuario = mysqli_fetch_assoc($resultado);
 
-    // var_dump($resultado_usuario);
+    //var_dump($resultado_usuario);
 
     if($registros == 1){
         $_SESSION['id'] = $resultado_usuario['id'];

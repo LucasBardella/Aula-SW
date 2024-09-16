@@ -9,6 +9,8 @@
 
 
 
+
+
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
@@ -19,18 +21,18 @@
                             </li>
                         </ol>
                         <div class="card mb-4">
-                            <form>
+                            <form action="processa_insere_cliente.php" method="POST">
                                 <div class="mb-3">
                                     <label for="" class="form-label">Nome</label>
-                                    <input type="email" class="form-control">
+                                    <input name="nome" type="text" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">E-mail</label>
-                                    <input type="password" class="form-control">
+                                    <input name="email" type="email" class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Telefone</label>
-                                    <input type="password" class="form-control">
+                                    <input name="telefone" type="text" class="form-control">
                                 </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
