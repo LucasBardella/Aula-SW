@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Ago-2024 às 14:05
+-- Tempo de geração: 16-Set-2024 às 14:10
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `cadastri_cliente`
 --
-CREATE DATABASE IF NOT EXISTS `cadastri_cliente` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `cadastri_cliente`;
 
 -- --------------------------------------------------------
 
@@ -42,7 +40,11 @@ CREATE TABLE `clientes` (
 
 INSERT INTO `clientes` (`id_cliente`, `nome_cliente`, `email_cliente`, `telefone`) VALUES
 (1, 'etec mcm', 'etec@gmail.com', '(11) 98765-4321'),
-(2, 'Raphaela Luvizotto', 'rapha@gmail.com', '(11) 93765-1234');
+(2, 'Raphaela Luvizotto', 'rapha@gmail.com', '(11) 93765-1234'),
+(3, 'Bolívia', 'bolivia@gmail.com', '(11) 94543-5472'),
+(4, 'Lele do Grau', 'lele@gmail.com', '(11) 98392-1495'),
+(5, 'Luana Pigmeu (Forma RP)', 'luana@gmail.com', '(11) 97130-2276'),
+(6, 'Carolina Libariano', 'libarinas@gmail.com', '(11) 97772-9123');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'LUCAS BARDELLA', 'lucas@gmail.com', '1234');
+(2, 'LUCAS BARDELLA', 'lucas@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Índices para tabelas despejadas
@@ -88,13 +90,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
